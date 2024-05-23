@@ -1,4 +1,4 @@
-import LitsocIcon from '/assets/images/logo_litsoc_wh.png'
+import LitsocIcon from '@/public/assets/images/logo_litsoc_wh.png'
 import Image from 'next/image'
 
 export function LitsocLogo() {
