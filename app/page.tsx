@@ -3,26 +3,9 @@ import AuthButton from "../components/AuthButton";
 import { createClient } from "@/utils/supabase/server";
 import ConnectSupabaseSteps from "@/components/tutorial/ConnectSupabaseSteps";
 import SignUpUserSteps from "@/components/tutorial/SignUpUserSteps";
-import Header from "@/components/Header";
-import { LitsocLogo } from "@/components/LitsocLogo";
-import Link from "next/link";
 
-const navConfig = {
-  links: [
-    {
-      href: "/about",
-      label: "About",
-    },
-    {
-      href: "/events",
-      label: "Events",
-    },
-    {
-      href: "/team",
-      label: "Team",
-    },
-  ],
-};
+
+
 
 export default async function Index() {
   const canInitSupabaseClient = () => {
@@ -39,22 +22,11 @@ export default async function Index() {
   const isSupabaseConnected = canInitSupabaseClient();
 
   return (
-    <div className="flex-1 w-full flex flex-col gap-20 items-center">
-      <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
-        <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
-          <LitsocLogo />
-          <div className="flex items-center gap-6 transition-all ease-in-out">
-            {navConfig.links.map((link) => (
-              <Link key={link.href} href={link.href}>
-                <p className="cursor-pointer text-sm hover:text-stone-300">{link.label}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </nav>
+    <div className="mt-2 flex-1 w-full flex flex-col gap-20 items-center">
+      
 
       <div className="animate-in flex-1 flex flex-col gap-20 opacity-0 max-w-4xl px-3">
-        <Header />
+        
         <main className="flex-1 flex flex-col gap-6">
           <h2 className="font-bold text-4xl mb-4">Next steps</h2>
           {isSupabaseConnected ? <SignUpUserSteps /> : <ConnectSupabaseSteps />}
