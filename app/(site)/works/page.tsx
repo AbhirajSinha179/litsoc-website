@@ -4,7 +4,7 @@ import { getBaseUrl } from "@/utils/constants";
 import Link from "next/link";
 import Header from "@/components/Header";
 
-export async function getAllWorks() {
+async function getAllWorks() {
   const url = `${getBaseUrl()}/api/works`;
   const res = await fetch(url);
 
