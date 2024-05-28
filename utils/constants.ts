@@ -1,20 +1,16 @@
 export const navConfig = {
   links: [
     {
-      href: "/",
-      label: "Home",
-    },
-    {
       href: "/about",
       label: "About",
     },
     {
-      href: "/team",
-      label: "Team",
-    },
-    {
       href: "/works",
       label: "Works",
+    },
+    {
+      href: "/team",
+      label: "Team",
     },
     {
       href: "#contact",
