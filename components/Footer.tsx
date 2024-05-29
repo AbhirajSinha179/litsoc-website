@@ -1,12 +1,12 @@
 import Link from "next/link";
-import { FacebookIcon, LinkedinIcon, InstagramIcon, PhoneIcon } from "./Icons";
+import {IconFacebook, IconLinkedin, IconInstagram, IconPhone} from "./Icons";
 
-const PhoneNumber="tel:+91-620-448-9339";
+const Phone_Number="tel:+91-620-448-9339";
 
 export default function Footer() {
   return (
     <footer id="contact" className="w-full md:px-10 px-2">
-      <div className="bg-[#543310] h-0.5 max-w-full mx-4 rounded"></div>
+      <div className="bg-[var(--custom-color)] h-0.5 max-w-full mx-4 rounded"></div>
       <div className="w-full border-t border-foreground/10 md:px-4 px-0 pb-6 py-2 flex justify-between items-center text-center text-xs">
         <p className="text-base md:hidden mt-4">
           &#169; The Literary Society,
@@ -23,7 +23,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="flex justify-center items-center"
           >
-            <FacebookIcon />
+            <IconFacebook />
           </Link>
           <Link
             href="https://www.instagram.com/litsocbitm"
@@ -31,7 +31,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="flex justify-center items-center"
           >
-            <InstagramIcon />
+            <IconInstagram />
           </Link>
           <Link
             href="https://www.linkedin.com/company/literary-society-bit-mesra"
@@ -39,15 +39,15 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="flex justify-center items-center"
           >
-            <LinkedinIcon />
+            <IconLinkedin />
           </Link>
           <Link
-            href={PhoneNumber}
+            href={Phone_Number}
             target="_blank"
             rel="noopener noreferrer"
             className="flex justify-center items-center"
           >
-            <PhoneIcon />
+            <IconPhone />
           </Link>
         </div>
       </div>

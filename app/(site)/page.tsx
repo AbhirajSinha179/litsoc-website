@@ -10,7 +10,7 @@ export default async function Index() {
             The Literary Society <br />{" "}
             <span className="opacity-80">BIT Mesra</span>
           </p>
-          <div className="w-full p-[1px] bg-gradient-to-r from-transparent via-[#543310]/10 to-transparent my-8" />
+          <div className="w-full p-[1px] bg-gradient-to-r from-transparent via-[var(--custom-color)]/10 to-transparent my-8" />
         </div>
         <main className="flex-1 flex flex-col gap-6"></main>
       </div>
