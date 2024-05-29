@@ -64,7 +64,7 @@ export default async function Page() {
         {works?.map((item: WorkCardProps) => (
           <Link href={`/works/${item.id}`} key={item.id} className="flex">
           <div
-            className="bg-[#74512D] text-[#F8F4E1] overflow-hidden rounded-lg transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer flex flex-col"
+            className="bg-[#74512D] text-[var(--custom-color-2)] overflow-hidden rounded-lg transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer flex flex-col"
           >
               <div className="flex-shrink-0">
                 <img
@@ -93,7 +93,7 @@ export default async function Page() {
         {works?.map((item: WorkCardProps) => (
           <Link href={`/works/${item.id}`} key={item.id} className="flex">
           <div
-            className="bg-[#74512D] text-[#F8F4E1] overflow-hidden rounded-lg transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer flex flex-col"
+            className="bg-[#74512D] text-[var(--custom-color-2)] overflow-hidden rounded-lg transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer flex flex-col"
           >
               <div className="flex-shrink-0">
                 <img
@@ -122,7 +122,7 @@ export default async function Page() {
         {works?.map((item: WorkCardProps) => (
           <Link href={`/works/${item.id}`} key={item.id} className="flex">
           <div
-            className="bg-[#74512D] text-[#F8F4E1] overflow-hidden rounded-lg transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer flex flex-col"
+            className="bg-[#74512D] text-[var(--custom-color-2)] overflow-hidden rounded-lg transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer flex flex-col"
           >
               <div className="flex-shrink-0">
                 <img

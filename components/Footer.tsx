@@ -1,49 +1,48 @@
 import Link from "next/link";
-import Image from "next/image";
-import Instagram from "@/public/images/instagram.png";
-import LinkedIn from "@/public/images/linkedIn.png";
-import Facebook from "@/public/images/facebook.png";
+import {IconFacebook, IconLinkedin, IconInstagram, IconPhone} from "./Icons";
+
+const Phone_Number="tel:+91-620-448-9339";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="w-full px-10">
-      <div className="bg-[#543310] h-0.5 w-full rounded"></div>
-      <div className="w-full border-t border-t-foreground/10 md:px-4 px-0 pb-6 p-2 flex justify-between h-full text-center text-xs">
-        <p className=" md:hidden text-base flex justify-center mt-8  ">
-          &#169; The Literary Society,
-          <br />
-          BIT Mesra
-        </p>
-        <p className="hidden md:flex text-base">
+    <footer id="contact" className="w-full sm:px-10 px-2">
+      <div className="bg-[var(--custom-color)] h-0.5 max-w-full mx-4 rounded"></div>
+      <div className="w-full border-t border-foreground/10 px-4 pb-6 py-2 flex  sm:flex-row flex-col  sm:justify-between justify-center items-center text-center text-xs">
+        <p className="flex text-base">
           &#169; The Literary Society, BIT Mesra
         </p>
-        <div className="flex justify-end flex-col md:flex-row">
+        <div className="flex flex-row sm:gap-4 gap-8  mt-4  sm:mt-0 ">
           <Link
-            href={"https://www.facebook.com/LiterarySocietyBITMesra/"}
+            href="https://www.facebook.com/LiterarySocietyBITMesra/"
             target="_blank"
             rel="noopener noreferrer"
+            className="flex justify-center items-center"
           >
-            {/* <Image src={Facebook} alt="" className="w-8 h-8 p-0.5 mx-2" /> */}
+            <IconFacebook />
           </Link>
-          <div className="border-r hidden md:block border-gray-300 h-6"></div>
           <Link
-            href={"https://www.instagram.com/litsocbitm"}
+            href="https://www.instagram.com/litsocbitm"
             target="_blank"
             rel="noopener noreferrer"
+            className="flex justify-center items-center"
           >
-            {/* <Image
-              src={Instagram}
-              alt=""
-              className="w-8 h-8 p-0.5 mx-2 my-2 md:my-0"
-            /> */}
+            <IconInstagram />
           </Link>
-          <div className="border-r hidden md:block border-gray-300 h-6"></div>
           <Link
-            href={"https://www.linkedin.com/company/literary-society-bit-mesra"}
+            href="https://www.linkedin.com/company/literary-society-bit-mesra"
             target="_blank"
             rel="noopener noreferrer"
+            className="flex justify-center items-center"
           >
-            {/* <Image src={LinkedIn} alt="" className="w-8 h-8 p-0.5 mx-2" /> */}
+            <IconLinkedin />
+          </Link>
+          <Link
+            href={Phone_Number}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex justify-center items-center"
+          >
+            <IconPhone />
           </Link>
         </div>
       </div>
