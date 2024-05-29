@@ -45,7 +45,7 @@ export default function Navbar() {
               className={
                 "flex-1 w-full  hover:bg-[var(--custom-color)] hover:text-[#F8F4E1] " +
                 (pathname === link.href
-                  ? "bg-[var(--custom-color)e5] text-[#F8F4E1]"
+                  ? "bg-[var(--custom-color)]  text-[#F8F4E1] bg-opacity-60"
                   : "bg-transparent text-[var(--custom-color)]")
               }
             >
