@@ -5,7 +5,7 @@ export default function Layout({ children }: {
   children: React.ReactNode;
 }) {
   return (
-    <section className="flex flex-col items-center gap-20 w-full text-[var(--custom-color)] bg-[#F8F4E1] min-h-screen">
+    <section className="flex flex-col items-center gap-20 w-full text-[var(--custom-color)] bg-[var(--custom-color-2)] min-h-screen">
 
       <Navbar />
 

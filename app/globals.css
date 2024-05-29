@@ -13,6 +13,7 @@ html, body {
     --btn-background-hover: 200 10% 89%;
     --foreground: 200 50% 3%;
     --custom-color: #543310;
+    --custom-color-2:#F8F4E1;
   }
 
   @media (prefers-color-scheme: dark) {
