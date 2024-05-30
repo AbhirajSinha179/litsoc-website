@@ -4,7 +4,7 @@ export default function AboutPage() {
   return (
     <main className="flex flex-col items-center gap-12">
       <Header title="About Us" />
-      <p className="max-w-6xl p-2">
+      <p className="max-w-6xl py-2 p-4 text-center text-pretty">
         Nestled within East India's most esteemed institute, Birla Institute of
         Technology, The Literary Society is the living testimony of diverse
         talents and versatile personalities. With a focus on literature, our
