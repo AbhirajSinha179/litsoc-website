@@ -34,7 +34,7 @@ export default function Footer() {
           >
             <IconLinkedin />
           </Link>
-          <div className="space-x-1">
+          <div className="flex items-center gap-1">
             <Link
               href={`tel:${PHONE_NUMBER}`}
               target="_blank"
@@ -43,7 +43,7 @@ export default function Footer() {
             >
               <IconPhone />
             </Link>
-            <p className="text-md whitespace-nowrap">{PHONE_NUMBER}</p>
+            <p className="text-base whitespace-nowrap">{PHONE_NUMBER}</p>
           </div>
         </div>
       </div>
