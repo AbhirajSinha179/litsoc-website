@@ -1,19 +1,8 @@
-// import { getAllWorks } from "@/utils/actions";
 import { WorkCardProps } from "@/utils/types";
-import { getBaseUrl } from "@/utils/constants";
+import { getWorks } from "@/utils/actions";
 import Link from "next/link";
 import Header from "@/components/Header";
 
-// async function getAllWorks() {
-//   const url = `${getBaseUrl()}/api/works`;
-//   const res = await fetch(url);
-
-//   if (!res.ok) {
-//     throw new Error("Failed to fetch data");
-//   }
-
-//   return res.json();
-// }
 
 const works = [
   {
@@ -51,8 +40,7 @@ const works = [
 ];
 
 export default async function Page() {
-  // const data = await getAllWorks();
-  // const works = data?.result?.works;
+  // const works = await getWorks();
 
   return (
     <main className="flex flex-col items-center gap-12 px-4">
