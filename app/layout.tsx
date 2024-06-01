@@ -11,6 +11,7 @@ export const metadata = {
   description: "The official website of The Literary Society, BIT Mesra",
 };
 
+
 export default function RootLayout({
   children,
 }: {

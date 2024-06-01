@@ -1,8 +1,9 @@
 import Header from "@/components/Header";
+import { getTeam } from "@/utils/actions";
 import Image from "next/image";
 
 async function getData() {
-  // const res = await fetch("https://api.example.com/team");
+//   // const res = await fetch("https://api.example.com/team");
   const res = {
     json: async () => [
       {
@@ -33,12 +34,16 @@ async function getData() {
 
 export default async function Page() {
   const data = await getData();
+  const team = await getTeam();
+  const k21Team = team.filter((member) => member.joining_year === 2021);
+  const k22Team = team.filter((member) => member.joining_year === 2022);
+  const k23Team = team.filter((member) => member.joining_year === 2023);
 
   return (
     <main className="flex flex-col gap-20 items-center">
       <Header title="Our Team" />
 
-      <div className="grid sm:grid-cols-2 max-w-7xl gap-16">
+      <div className="grid sm:grid-cols-2 max-w-9xl gap-16">
         {data.map((member) => (
           <div key={member.name} className="flex flex-col gap-4 items-center">
             <Image
@@ -54,27 +59,42 @@ export default async function Page() {
             </div>
           </div>
         ))}
-        {/* <div className="flex flex-col gap-4 items-center">
-          <img src="/team/1.jpg" alt="Team member 1" className="w-48 h-48" />
-          <div className="p-4 space-y-4 mx-auto text-center">
-            <p className="whitespace-nowrap">Sparsh Anand</p>
-            <p>President</p>
-          </div>
-        </div> */}
       </div>
 
       <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl border-b border-b-black/20 ">
         {" "}
         k21s{" "}
       </h2>
+      <div className="grid grid-cols-2 justify-items-center sm:grid-cols-4 max-w-9xl gap-16">
+        {k21Team.map((member) => (
+          <h1 key={member.id} className="text-lg text-center">
+            {member?.name}
+          </h1>
+        ))}
+      </div>
       <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl border-b border-b-black/20 ">
         {" "}
         k22s{" "}
       </h2>
-      <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl border-b border-b-black/20 ">
+      <div className="grid grid-cols-2 justify-items-center sm:grid-cols-4 max-w-9xl gap-16">
+        {k22Team.map((member) => (
+          <h1 key={member.id} className="text-lg text-center">
+            {member?.name}
+          </h1>
+        ))}
+      </div>
+
+      {/* <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl border-b border-b-black/20 ">
         {" "}
         k23s{" "}
       </h2>
+      <div className="grid grid-cols-2 justify-items-center sm:grid-cols-4 max-w-9xl gap-16">
+        {k23Team.map((member) => (
+          <h1 key={member.id} className="text-lg text-center">
+            {member?.name}
+          </h1>
+        ))}
+      </div> */}
     </main>
   );
 }

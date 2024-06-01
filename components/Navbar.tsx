@@ -5,6 +5,7 @@ import { navConfig } from "@/utils/constants";
 import { Menu, X } from "lucide-react";
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
+import { gilda } from "@/utils/fonts";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +17,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="mx-2 mt-1 w-full flex items-center justify-between ease-in-out">
+      <nav className="mx-2 mt-1 w-full flex items-center justify-between ease-in-out" style={gilda.style}>
         <LitsocLogo />
         <div>
           <div className="hidden lg:flex justify-end gap-1 mr-2 mt-4 items-center">

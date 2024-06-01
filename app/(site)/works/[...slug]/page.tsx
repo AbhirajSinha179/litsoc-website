@@ -1,4 +1,5 @@
 import { getBaseUrl } from "@/utils/constants";
+import { gilda } from "@/utils/fonts";
 const works = [
   {
     id: "1",
@@ -62,8 +63,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <main className="flex flex-col items-center text-center gap-20">
       <div>
-        <h1 className="text-3xl font-bold max-w-lg">{ data?.title }</h1>
-        <h3 className="mt-2">Author(s): { data?.author }</h3>
+        <h1 className="text-3xl md:text-7xl font-bold" style={gilda.style}>{ data?.title }</h1>
+        <h3 className="mt-2 text-lg md:text-2xl" style={gilda.style}>Author(s): { data?.author }</h3>
       </div>
       <pre className="max-w-xl text-wrap sm:max-w-2xl lg:max-w-4xl">
         {/* This is a placeholder for the work with the ID of {id}. This page is
