@@ -2,7 +2,7 @@
 
 import { createClient } from "@supabase/supabase-js";
 
-const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY);
+const supabase = createClient(process.env.SUPABASE_URL as string, process.env.SUPABASE_ANON_KEY as string);
 
 export async function getWorkById(id: string) {
   const { data, error }  = await supabase.from("works").select().eq("id", id);
