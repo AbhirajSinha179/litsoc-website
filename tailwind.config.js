@@ -16,5 +16,18 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.truncate-multi-line': {
+          display: '-webkit-box',
+          '-webkit-box-orient': 'vertical',
+          overflow: 'hidden',
+          '-webkit-line-clamp': '6', // Number of lines to display
+        },
+      }
+
+      addUtilities(newUtilities, ['responsive', 'hover'])
+    },
+  ],
 };
