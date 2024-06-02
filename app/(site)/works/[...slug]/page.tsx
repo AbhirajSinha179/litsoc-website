@@ -1,7 +1,5 @@
 import { getBaseUrl } from "@/utils/constants";
 import { gilda } from "@/utils/fonts";
-import { getWorkById } from "@/utils/actions";
-
 const works = [
   {
     id: "1",
@@ -39,6 +37,23 @@ const works = [
     url: "https://en.wikipedia.org/wiki/To_Kill_a_Mockingbird",
   },
 ];
+
+// const getWorkById = async (id: string) => {
+  // const url = `${getBaseUrl()}/api/works`;
+  // const res = await fetch(url);
+
+  // if (!res.ok) {
+  //   throw new Error("Failed to fetch data");
+  // }
+
+  // const data = await res.json();
+
+  // console.log(data.result.works, id);
+
+  // const work = async () => data?.result?.works.find((work: any) => work.id === id);
+
+  // return work();
+// };
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const id = params.slug[0];
