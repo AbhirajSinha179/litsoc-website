@@ -1,31 +1,35 @@
 import Header from "@/components/Header";
 import { getTeam } from "@/utils/actions";
 import Image from "next/image";
-
 async function getData() {
-  return [
-    {
-      name: "Neeraj Kumar Singh",
-      role: "Faculty Advisor",
-      image: "/images/fac_ed.jpg",
-    },
-    {
-      name: "Lily",
-      role: "President",
-      image: "/images/prez_pic.jpg",
-    },
-    {
-      name: "Srishti Choudhary",
-      role: "Joint President",
-      image: "/images/joint_prez_1_pic.jpg",
-    },
-    {
-      name: "Shreyash Zade",
-      role: "Joint President",
-      image: "/images/joint_prez_2_pic.jpg",
-    },
-  ];
-}
+  //   // const res = await fetch("https://api.example.com/team");
+    const res = {
+      json: async () => [
+        {
+          name: "Neeraj Kumar Singh",
+          role: "Faculty Advisor",
+          image: "/images/fac_ed.jpg",
+        },
+        {
+          name: "Lily",
+          role: "President",
+          image: "/images/prez_pic.jpg",
+        },
+        {
+          name: "Srishti Choudhary",
+          role: "Joint President",
+          image: "/images/joint_prez_1_pic.jpg",
+        },
+        {
+          name: "Shreyash Zade",
+          role: "Joint President",
+          image: "/images/joint_prez_2_pic.jpg",
+        },
+      ],
+    };
+    const data = await res.json();
+    return data;
+  }
 
 export default async function Page() {
   const data = await getData();
@@ -85,6 +89,17 @@ export default async function Page() {
           </div>
         ))}
       </div>
+           {/* <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl border-b border-b-black/20 ">
+        {" "}
+        k23s{" "}
+      </h2>
+      <div className="grid grid-cols-2 justify-items-center sm:grid-cols-4 max-w-9xl gap-16">
+        {k23Team.map((member) => (
+          <h1 key={member.id} className="text-lg text-center">
+            {member?.name}
+          </h1>
+        ))}
+      </div> */}
     </main>
   );
 }
