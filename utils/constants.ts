@@ -5,6 +5,14 @@ export const navConfig = {
       label: "About",
     },
     {
+      href: "/works",
+      label: "Works",
+    },
+    {
+      href: "/events",
+      label: "Events"
+    },
+    {
       href: "/team",
       label: "Team",
     },
