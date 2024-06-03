@@ -7,14 +7,14 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string
 );
 
-export async function getWorkById(id: string) {
+export async function getWorkById(id: number) {
   const { data, error } = await supabase.from("works").select().eq("id", id);
 
   if (error) {
     throw new Error(error.message);
   }
 
-  return data;
+  return data[0];
 }
 
 export async function getWorks() {

@@ -9,6 +9,10 @@ export const navConfig = {
       label: "Works",
     },
     {
+      href: "/events",
+      label: "Events"
+    },
+    {
       href: "/team",
       label: "Team",
     },
