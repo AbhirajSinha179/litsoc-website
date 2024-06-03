@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import { getTeam } from "@/utils/actions";
+import { TeamProps } from "@/utils/types";
 import Image from "next/image";
 async function getData() {
   //   // const res = await fetch("https://api.example.com/team");
@@ -34,9 +35,10 @@ async function getData() {
 export default async function Page() {
   const data = await getData();
   const team = await getTeam();
-  const k21Team = team.filter((member) => member.joining_year === 2021);
-  const k22Team = team.filter((member) => member.joining_year === 2022);
-  const k23Team = team.filter((member) => member.joining_year === 2023);
+  const k21Team = team.filter((member:TeamProps) => member.joining_year === 2021);
+  const k22Team = team.filter((member:TeamProps) => member.joining_year === 2022);
+  const k23Team = team.filter((member:TeamProps) => member.joining_year === 2023);
+  console.log(k22Team)
 
   return (
     <main className="flex flex-col gap-20 items-center">
@@ -89,17 +91,18 @@ export default async function Page() {
           </div>
         ))}
       </div>
-           {/* <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl border-b border-b-black/20 ">
+
+      <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl border-b border-b-black/20">
         {" "}
         k23s{" "}
       </h2>
-      <div className="grid grid-cols-2 justify-items-center sm:grid-cols-4 max-w-9xl gap-16">
+      <div className="grid grid-cols-2 sm:grid-cols-4 max-w-9xl gap-8">
         {k23Team.map((member) => (
-          <h1 key={member.id} className="text-lg text-center">
+          <div key={member.id} className="text-lg text-center">
             {member?.name}
-          </h1>
+          </div>
         ))}
-      </div> */}
+      </div>
     </main>
   );
 }
