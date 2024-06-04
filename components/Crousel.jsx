@@ -49,7 +49,7 @@ const Carousel = () => {
       initialSlide={3}
       loop={true}
       modules={[EffectCoverflow, Pagination]}
-      className=" max-w-[900px] h-[500px] "
+      className=" max-w-[80vw] h-[80vw] sm:h-[60vh] lg:max-w-[900px]  lg:h-[500px] "
     >
       {images.map((image, index) => (
         <SwiperSlide
@@ -57,7 +57,7 @@ const Carousel = () => {
           className='bg-center bg-cover w-[300px] h-[500px] lg:w-[450px] lg:h-[500px] '
           >
 
-            <div className='flex justify-center p-36 text-7xl h-[500px]'>Loading <span className='animate-pulse '>...</span></div>
+            <div className='flex justify-center p-36 text-7xl w-[300px] h-[500px] lg:w-[450px] lg:h-[500px]'>Loading <span className='animate-pulse '>...</span></div>
             
             <Image src={image} alt={"Image"} className='block w-[300px] h-[500px] lg:w-[450px] lg:h-[500px] rounded-md' layout='fill' />
         
