@@ -8,7 +8,7 @@ import { EffectCoverflow, Pagination } from 'swiper/modules';
 import { getGalleryImages } from '@/utils/actions';
 import Image from "next/image";
 
-const Carousel = () => {
+export default function Carousel(){
   const [images, setImages] = useState([]);
   const [error, setError] = useState(null);
 
@@ -16,7 +16,7 @@ const Carousel = () => {
     async function fetchImages() {
       try {
         const fetchedImages = await  getGalleryImages();
-        console.log(fetchImages )
+      
         setImages(fetchedImages);
       } catch (err) {
         setError(err);
@@ -59,7 +59,7 @@ const Carousel = () => {
 
             <div className='flex justify-center p-36 text-7xl w-[300px] h-[500px] lg:w-[450px] lg:h-[500px]'>Loading <span className='animate-pulse '>...</span></div>
             
-            <Image src={image} alt={"Image"} className='block w-[300px] h-[500px] lg:w-[450px] lg:h-[500px] rounded-md' layout='fill' />
+            <Image src={image} alt={"Image Not Available"} className='block w-[300px] h-[500px] lg:w-[450px] lg:h-[500px] rounded-md' layout='fill' />
         
         </SwiperSlide>
       ))}
@@ -67,4 +67,4 @@ const Carousel = () => {
   );
 }
 
-export default Carousel;
+

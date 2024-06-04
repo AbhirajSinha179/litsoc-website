@@ -42,9 +42,13 @@ export async function getGalleryImages() {
     console.error('Error fetching images:', error);
     return [];
   }
+  if(!data){
+    console.error('No images present in database');
+    return [];
+  }
   const images = await Promise.all(data.map(async (file) => {
-    const  data  = publicURL.data.publicUrl+'/'+file.name
-    return data;
+    const  imageUrl  = publicURL.data.publicUrl+'/'+file.name
+    return imageUrl;
   }));
 
 
