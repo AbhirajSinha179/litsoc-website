@@ -23,7 +23,10 @@ export default function Navbar() {
           <div className="hidden lg:flex justify-end gap-1 mr-2 mt-4 items-center">
             {navConfig.links.map((link) => (
               <Link key={link.href} href={link.href} className="flex-1">
-                <p className="cursor-pointer rounded py-3 px-4 hover:bg-[var(--custom-color)] hover:text-[var(--custom-color-2)] transition duration-200 ease-in-out hover:scale-110 text-lg">
+                <p className={"cursor-pointer rounded py-3 px-4 hover:bg-[var(--custom-color)] hover:text-[var(--custom-color-2)] transition duration-200 ease-in-out hover:scale-110 text-lg "+
+                (pathname === link.href
+                  ? "bg-[var(--custom-color)]  text-[var(--custom-color-2)] bg-opacity-60"
+                  : "bg-transparent text-[var(--custom-color)]")}>
                   {link.label}
                 </p>
               </Link>
