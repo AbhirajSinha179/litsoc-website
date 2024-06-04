@@ -13,6 +13,10 @@ export const navConfig = {
       label: "Events"
     },
     {
+      href: "/gallery",
+      label: "Gallery"
+    },
+    {
       href: "/team",
       label: "Team",
     },

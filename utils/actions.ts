@@ -32,3 +32,25 @@ export async function getTeam() {
   }
   return data;
 }
+
+export async function getGalleryImages() {
+  const  publicURL = supabase.storage.from('litsoc-images').getPublicUrl('Gallery')
+ 
+  const { data, error } = await supabase.storage.from('litsoc-images').list('Gallery')
+
+  if (error) {
+    console.error('Error fetching images:', error);
+    return [];
+  }
+  if(!data){
+    console.error('No images present in database');
+    return [];
+  }
+  const images = await Promise.all(data.map(async (file) => {
+    const  imageUrl  = publicURL.data.publicUrl+'/'+file.name
+    return imageUrl;
+  }));
+
+
+  return images;
+}
