@@ -38,7 +38,7 @@ export default async function Page() {
   const k21Team = team.filter((member:TeamProps) => member.joining_year === 2021);
   const k22Team = team.filter((member:TeamProps) => member.joining_year === 2022);
   const k23Team = team.filter((member:TeamProps) => member.joining_year === 2023);
-  console.log(k22Team)
+  // console.log(k22Team)
 
   return (
     <main className="flex flex-col gap-20 items-center">

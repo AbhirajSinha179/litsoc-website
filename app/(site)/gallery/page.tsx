@@ -1,7 +1,12 @@
-export default function Gallery() {
+
+import Header from "@/components/Header";
+import Crousel from "@/components/Crousel"
+export default async function Gallery() {
+ 
     return (
-      <main>
-        Gallery
+      <main className="flex flex-col gap-20 items-center">
+      <Header title="Gallery" />
+      <Crousel/>
       </main>
     );
   }
