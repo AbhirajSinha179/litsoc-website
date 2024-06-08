@@ -19,7 +19,7 @@ export default function Footer() {
             <IconFacebook />
           </Link>
           <Link
-            href="https://www.instagram.com/litsocbitm"
+            href="https://www.instagram.com/litsocbitm_"
             target="_blank"
             rel="noopener noreferrer"
             className="flex justify-center items-center"
