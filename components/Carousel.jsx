@@ -4,20 +4,20 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css'; 
 import 'swiper/css/effect-coverflow'; 
 import 'swiper/css/pagination'; 
-import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { Autoplay, EffectCoverflow, Pagination } from 'swiper/modules';
 import { getGalleryImages } from '@/utils/actions';
 import Image from "next/image";
 
 export default function Carousel(){
   const [images, setImages] = useState([]);
+  
   const [error, setError] = useState(null);
 
   useEffect(() => {
     async function fetchImages() {
       try {
         const fetchedImages = await  getGalleryImages();
-      
-        setImages(fetchedImages);
+        setImages(fetchedImages[0]);
       } catch (err) {
         setError(err);
       }
@@ -37,6 +37,16 @@ export default function Carousel(){
     modifier: 1,
     slideShadows: true,
   };
+  const autoplay= {
+    enabled: true,
+    delay: 7000,
+    waitForTransition: false,
+    disableOnInteraction: false,
+    stopOnLastSlide: false,
+    reverseDirection: false,
+    pauseOnMouseEnter: true,
+    dataSwiperAutoplay: 2000
+  };
 
   return (
     <Swiper
@@ -48,8 +58,10 @@ export default function Carousel(){
       pagination={{ clickable: true }}
       initialSlide={3}
       loop={true}
-      modules={[EffectCoverflow, Pagination]}
-      className=" max-w-[80vw] h-[80vw] sm:h-[60vh] lg:max-w-[900px]  lg:h-[500px] "
+      autoplay={autoplay}
+      modules={[EffectCoverflow, Pagination, Autoplay]}
+      className=" max-w-[100vw] h-[66vw] sm:h-[400px] sm:max-w-[600px] "
+      
     >
       {images.map((image, index) => (
         <SwiperSlide
@@ -59,7 +71,7 @@ export default function Carousel(){
 
             <div className='flex justify-center p-36 text-7xl w-[300px] h-[500px] lg:w-[450px] lg:h-[500px]'>Loading <span className='animate-pulse '>...</span></div>
             
-            <Image src={image} alt={"Image Not Available"} className='block w-[300px] h-[500px] lg:w-[450px] lg:h-[500px] rounded-md' layout='fill' />
+            <Image src={image} alt={"Image Not Available"} className='block w-[300px] h-[500px] lg:w-[600px] lg:h-[400px] sm:rounded-md' layout='fill'/>
         
         </SwiperSlide>
       ))}
