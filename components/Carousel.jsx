@@ -16,8 +16,8 @@ export default function Carousel(){
   useEffect(() => {
     async function fetchImages() {
       try {
-        const fetchedImages = await  getGalleryImages();
-        setImages(fetchedImages[0]);
+        const filteredImages = await getGalleryImages();
+        setImages(filteredImages[0]);
       } catch (err) {
         setError(err);
       }
