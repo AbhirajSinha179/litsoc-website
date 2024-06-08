@@ -49,7 +49,7 @@ export async function getGalleryImages() {
     return [];
   }
 
-  const images = await Promise.all(data.filter((val)=>val.name!='Litnight').filter((val)=>val.name!='Rostra').map(async (file) => {
+  const images = await Promise.all(data.filter((val) => val.name != 'Litnight' && val.name != 'Rostra').map(async (file) => {
     if(file.name=='Litnight'|| file.name=='Rostra') return file.name;
     const  imageUrl  = publicURL.data.publicUrl+'/'+file.name
     return imageUrl;
