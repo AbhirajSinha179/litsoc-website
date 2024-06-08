@@ -1,5 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css'; 
 import 'swiper/css/effect-coverflow'; 
@@ -8,8 +9,8 @@ import { Autoplay, EffectCoverflow, Pagination } from 'swiper/modules';
 import Image from "next/image";
 
 export default function Carousel({images}){
-	console.log(images)
-  const coverflowEffectConfig = {
+
+ const coverflowEffectConfig = {
     rotate: 50,
     stretch: 0,
     depth: 100,
@@ -58,4 +59,6 @@ export default function Carousel({images}){
   );
 }
 
-
+Carousel.propTypes = {
+  images: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
