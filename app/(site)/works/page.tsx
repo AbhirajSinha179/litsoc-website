@@ -3,7 +3,6 @@ import { getWorks } from "@/utils/actions";
 import Link from "next/link";
 import Header from "@/components/Header";
 
-
 // const works = [
 //   {
 //     id: "1",
@@ -49,88 +48,97 @@ export default async function Page() {
       <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl"> Reviews </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-5xl">
-        {works?.filter((item: WorkCardProps)=>(item.type=="Reviews")).map((item: WorkCardProps) => (
-          <Link href={`/works/${item.id}`} key={item.id} className="flex">
-          <div
-            className="bg-[#74512D] text-[var(--custom-color-2)] overflow-hidden rounded-lg transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer flex flex-col"
-          >
-              <div className="flex-shrink-0">
-                <img
-                  className=" w-full object-cover object-top h-48"
-                  src={item.image_url}
-                  alt=""
-                />
-              </div>
-              <div className="flex flex-col justify-between flex-1 p-4">
-                <div className="flex-1">
-                  <p className="text-xl font-semibold">{item.name}</p>
-                  <p className="mt-3 text-base truncate-multi-line">{item.body}</p>
+        {works
+          ?.filter((item: WorkCardProps) => item.type == "Reviews")
+          .map((item: WorkCardProps) => (
+            <Link href={`/works/${item.id}`} key={item.id} className="flex">
+              <div className="bg-[#74512D] text-[var(--custom-color-2)] overflow-hidden rounded-lg transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer flex flex-col">
+                <div className="flex-shrink-0">
+                  <img
+                    className=" w-full object-cover object-top h-48"
+                    src={item.image_url}
+                    alt=""
+                  />
                 </div>
-                <div className="flex items-center mt-3">
-                  <p className="text-sm font-medium">{item.authors}</p>
+                <div className="flex flex-col justify-between flex-1 p-4">
+                  <div className="flex-1">
+                    <p className="text-xl font-semibold">{item.name}</p>
+                    <p className="mt-3 text-base truncate-multi-line">
+                      {item.body}
+                    </p>
+                  </div>
+                  <div className="flex items-center mt-3">
+                    <p className="text-sm font-medium">{item.authors}</p>
+                  </div>
                 </div>
               </div>
-          </div>
             </Link>
-        )) ?? "No works found"}
+          )) ?? "No works found"}
       </div>
-      
-      <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl"> Collections </h2>
+
+      <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl">
+        {" "}
+        Collections{" "}
+      </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-5xl">
-        {works?.filter((item: WorkCardProps)=>(item.type=="Collections")).map((item: WorkCardProps) => (
-          <Link href={`/works/${item.id}`} key={item.id} className="flex">
-          <div
-            className="bg-[#74512D] text-[var(--custom-color-2)] overflow-hidden rounded-lg transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer flex flex-col"
-          >
-              <div className="flex-shrink-0">
-                <img
-                  className="w-full object-cover object-top h-48"
-                  src={item.image_url}
-                  alt=""
-                />
-              </div>
-              <div className="flex flex-col justify-between flex-1 p-4">
-                <div className="flex-1">
-                  <p className="text-xl font-semibold">{item.name}</p>
-                  <p className="mt-3 text-base truncate-multi-line">{item.body}</p>
+        {works
+          ?.filter((item: WorkCardProps) => item.type == "Collections")
+          .map((item: WorkCardProps) => (
+            <Link href={`/works/${item.id}`} key={item.id} className="flex">
+              <div className="bg-[#74512D] text-[var(--custom-color-2)] overflow-hidden rounded-lg transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer flex flex-col">
+                <div className="flex-shrink-0">
+                  <img
+                    className="w-full object-cover object-top h-48"
+                    src={item.image_url}
+                    alt=""
+                  />
                 </div>
-                <div className="flex items-center mt-3">
-                  <p className="text-sm font-medium">{item.authors}</p>
+                <div className="flex flex-col justify-between flex-1 p-4">
+                  <div className="flex-1">
+                    <p className="text-xl font-semibold">{item.name}</p>
+                    <p className="mt-3 text-base truncate-multi-line">
+                      {item.body}
+                    </p>
+                  </div>
+                  <div className="flex items-center mt-3">
+                    <p className="text-sm font-medium">{item.authors}</p>
+                  </div>
                 </div>
               </div>
-          </div>
             </Link>
-        )) ?? "No works found"}
+          )) ?? "No works found"}
       </div>
 
       <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl"> Blogs </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-5xl">
-        {works?.filter((item: WorkCardProps)=>(item.type=="Blogs")).map((item: WorkCardProps) => (
-          <Link href={`/works/${item.id}`} key={item.id} className="flex">
-          <div
-            className="bg-[#74512D] text-[var(--custom-color-2)] overflow-hidden rounded-lg transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer flex flex-col"
-          >
-              <div className="flex-shrink-0">
-                <img
-                  className="w-full object-cover object-top h-48"
-                  src={item.image_url}
-                  alt=""
-                />
-              </div>
-              <div className="flex flex-col justify-between flex-1 p-4">
-                <div className="flex-1">
-                  <p className="text-xl font-semibold">{item.name}</p>
-                  <p className="mt-3 text-base  truncate-multi-line">{item.body}</p>
+        {works
+          ?.filter((item: WorkCardProps) => item.type == "Blogs")
+          .map((item: WorkCardProps) => (
+            <Link href={`/works/${item.id}`} key={item.id} className="flex">
+              <div className="bg-[#74512D] text-[var(--custom-color-2)] overflow-hidden rounded-lg transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer flex flex-col">
+                <div className="flex-shrink-0">
+                  <img
+                    className="w-full object-cover object-top h-48"
+                    src={item.image_url}
+                    alt=""
+                  />
                 </div>
-                <div className="flex items-center mt-3">
-                  <p className="text-sm font-medium">{item.authors}</p>
+                <div className="flex flex-col justify-between flex-1 p-4">
+                  <div className="flex-1">
+                    <p className="text-xl font-semibold">{item.name}</p>
+                    <p className="mt-3 text-base  truncate-multi-line">
+                      {item.body}
+                    </p>
+                  </div>
+                  <div className="flex items-center mt-3">
+                    <p className="text-sm font-medium">{item.authors}</p>
+                  </div>
                 </div>
               </div>
-          </div>
             </Link>
-        )) ?? "No works found"}
+          )) ?? "No works found"}
       </div>
     </main>
   );
