@@ -1,8 +1,14 @@
 
 import Image from 'next/image';
+import { FC } from 'react';
 
-const rostraEvents = [
-  {
+interface EventProps {
+  name: string;
+  image: string;
+  description: string;
+}
+
+const rostraEvents: EventProps[] = [  {
     name: "YOUTH PARLIAMENT",
     image: "/images/youth_parliament.jpg",
     description: "A two day simulation of a parliamentary session held annually, giving the experience of the working, proceedings and the challenges of our administration.",
@@ -87,7 +93,7 @@ const rostraEvents = [
   },
 ];
 
-const litnightEvents = [
+const litnightEvents: EventProps[] = [
   {
     name: "THESPIAN",
     image: "/images/thespian.jpg",
@@ -105,8 +111,8 @@ const litnightEvents = [
   },
 ];
 
-const Event = ({ name, image, description }) => {
-  return (
+const Event: FC<EventProps> = ({ name, image, description }) => {
+    return (
     <div className="max-w-md mx-auto bg-white shadow-md rounded-lg overflow-hidden transition-transform duration-300 transform hover:scale-105">
       <div className="relative h-0" style={{ paddingBottom: '100%' }}>
         <Image src={image} alt={name} layout="fill" objectFit="cover" className="rounded-t-lg" />
@@ -120,8 +126,8 @@ const Event = ({ name, image, description }) => {
 };
 
 
-export default function EventsPage() {
-  return (
+const EventsPage: FC = () => {
+    return (
     <main className="container mx-auto p-8">
       <section className="mb-8">
         <h2 className="text-3xl font-bold mb-4">Rostra Events</h2>
@@ -152,3 +158,4 @@ export default function EventsPage() {
     </main>
   );
 }
+export default EventsPage;
