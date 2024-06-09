@@ -1,6 +1,7 @@
 
 import Image from 'next/image';
 import { FC } from 'react';
+import Header from '@/components/Header';
 
 interface EventProps {
   name: string;
@@ -130,8 +131,10 @@ const Event: FC<EventProps> = ({ name, image, description }) => {
 const EventsPage: FC = () => {
     return (
     <main className="container mx-auto p-8">
+            <Header title="Events" />
+
       <section className="mb-8">
-        <h2 className="text-3xl font-bold mb-4">Rostra Events</h2>
+        <h2 className="text-3xl mb-4 text-center underline">Rostra Events</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {rostraEvents.map((event, index) => (
             <Event
@@ -144,7 +147,7 @@ const EventsPage: FC = () => {
         </div>
       </section>
       <section>
-        <h2 className="text-3xl font-bold mb-4">Litnight Events</h2>
+        <h2 className="text-3xl mb-4 text-center underline">Litnight Events</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {litnightEvents.map((event, index) => (
             <Event
