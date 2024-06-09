@@ -8,9 +8,10 @@ interface EventProps {
   description: string;
 }
 
-const rostraEvents: EventProps[] = [  {
+const rostraEvents: EventProps[] = [  
+  {
     name: "YOUTH PARLIAMENT",
-    image: "/images/youth_parliament.jpg",
+    image: "/images/YOUTH_PARLIAMENT.jpg",
     description: "A two day simulation of a parliamentary session held annually, giving the experience of the working, proceedings and the challenges of our administration.",
   },
   /*{
@@ -20,12 +21,12 @@ const rostraEvents: EventProps[] = [  {
   },*/
   {
     name: "SPEAKERS' DILEMMA",
-    image: "/images/speaker's_dilemma.jpg",
+    image: "/images/SPEAKER'S_DILEMMA.jpg",
     description: "A test of detective skills and trivia knowledge of the participants, based on literary facts and fiction.",
   },
   {
     name: "NEHLE-PE-DEHLA",
-    image: "/images/nehle_pe_dehla.jpg",
+    image: "/images/NEHLE_PE_DEHLA.jpg",
     description: "The event follows the quintessential Hindi Debate format with a literary twist.",
   },
   /*{
@@ -35,35 +36,35 @@ const rostraEvents: EventProps[] = [  {
   },*/
   {
      name: "BOOK EXHIBITION",
-  image: "/images/BOOK_EXHIBITION.jpg",
+  image: "/images/book_exhibition.jpg",
   description: "Book exhibition for fellow bookworms to mingle, share their favourite reads, and spark lively discussions.",
 
   },
   {
     name: "SPELL BEE",
-    image: "/images/spell_bee.jpg",
+    image: "/images/Spell_bee.jpg",
     description: "Classic Spelling-Bee competition for word geeks of all ages.",
 
   },
   {
     name: "STORY BOX",
-    image: "/images/STORY_BOX.jpg",
+    image: "/images/story_box.jpg",
     description: "An event that tests the enduring power of storytelling.",
 
   },
   {
     name: "NEWSROOM",
-    image: "/images/newsroom.jpg",
+    image: "/images/NEWSROOM.jpg",
     description: "An overall fun event that tests grammatical precision and oratory skills followed by a panel discussion.",
   },
   {
     name: "VAAK-YUDDH",
-    image: "/images/vaak_yuddh.jpg",
+    image: "/images/VAAK_YUDDH.jpg",
     description: "Comprises of two rounds, first : instant poetry writing on certain topic followed by a poetic version of debate between the respective teams.",
   },
   {
     name: "RADIOACTIVE",
-    image: "/images/radioactive.jpg",
+    image: "/images/RADIOACTIVE.jpg",
     description: "Participants are expected to connect the two songs with their impeccable enunciation and witty punchlines in a stipulated time.",
   },
   {
@@ -88,7 +89,7 @@ const rostraEvents: EventProps[] = [  {
   },
   {
     name: "KAVI SAMMELAN",
-    image: "/images/kavi_sammelan_rostra.jpg",
+    image: "/images/KAVI_SAMMELAN_ROSTRA.jpg",
     description: "A gathering filled with captivating realms of poetries that instil a plethora of emotions in the audience, leaving them awestruck and amazed.",
   },
 ];
@@ -96,17 +97,17 @@ const rostraEvents: EventProps[] = [  {
 const litnightEvents: EventProps[] = [
   {
     name: "THESPIAN",
-    image: "/images/thespian.jpg",
+    image: "/images/THESPIAN.jpg",
     description: "Thespian is the rhetoric of theatre where the contestants impersonate their favorite characters and engage in a contentious debate of contrasting opinions and immaculate wits.",
   },
   {
     name: "KAVI SAMMELAN",
-    image: "/images/kavi_sammelan.jpg",
+    image: "/images/KAVI_SAMMELAN.jpg",
     description: "A gathering filled with captivating realms of poetries that instil a plethora of emotions in the audience, leaving them awestruck and amazed.",
   },
   {
     name: "SYMPOSIUM",
-    image: "/images/symposium.jpg",
+    image: "/images/SYMPOSIUM.jpg",
     description: "It is a contest that pledges an opportunity for literature enthusiasts to share their soulful stories, heartfelt poetries and writeups on fervent narratives.",
   },
 ];
