@@ -57,29 +57,26 @@ export async function getGalleryImages() {
     return [];
   }
 
-  const images = await Promise.all(
+  const images =
     data
       .filter((val) => val.name != "Litnight" && val.name != "Rostra")
-      .map(async (file) => {
+      .map((file) => {
         if (file.name == "Litnight" || file.name == "Rostra") return file.name;
         const imageUrl = publicURL.data.publicUrl + "/" + file.name;
         return imageUrl;
       })
-  );
 
-  const litImages = await Promise.all(
-    data2.map(async (file) => {
+  const litImages =
+    data2.map((file) => {
       const imageUrl = publicURL.data.publicUrl + "/Litnight/" + file.name;
       return imageUrl;
     })
-  );
 
-  const rostraImages = await Promise.all(
-    data3.map(async (file) => {
+  const rostraImages = 
+    data3.map((file) => {
       const imageUrl = publicURL.data.publicUrl + "/Rostra/" + file.name;
       return imageUrl;
     })
-  );
 
   return [images, litImages, rostraImages];
 }
