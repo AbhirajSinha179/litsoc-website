@@ -4,40 +4,46 @@ import { TeamProps } from "@/utils/types";
 import Image from "next/image";
 async function getData() {
   //   // const res = await fetch("https://api.example.com/team");
-    const res = {
-      json: async () => [
-        {
-          name: "Neeraj Kumar Singh",
-          role: "Faculty Advisor",
-          image: "/images/fac_ed.jpg",
-        },
-        {
-          name: "Lily",
-          role: "President",
-          image: "/images/prez_pic.jpg",
-        },
-        {
-          name: "Srishti Choudhary",
-          role: "Joint President",
-          image: "/images/joint_prez_1_pic.jpg",
-        },
-        {
-          name: "Shreyash Zade",
-          role: "Joint President",
-          image: "/images/joint_prez_2_pic.jpg",
-        },
-      ],
-    };
-    const data = await res.json();
-    return data;
-  }
+  const res = {
+    json: async () => [
+      {
+        name: "Neeraj Kumar Singh",
+        role: "Faculty Advisor",
+        image: "/images/fac_ed.jpg",
+      },
+      {
+        name: "Lily",
+        role: "President",
+        image: "/images/prez_pic.jpg",
+      },
+      {
+        name: "Srishti Choudhary",
+        role: "Joint President",
+        image: "/images/joint_prez_1_pic.jpg",
+      },
+      {
+        name: "Shreyash Zade",
+        role: "Joint President",
+        image: "/images/joint_prez_2_pic.jpg",
+      },
+    ],
+  };
+  const data = await res.json();
+  return data;
+}
 
 export default async function Page() {
   const data = await getData();
   const team = await getTeam();
-  const k21Team = team.filter((member:TeamProps) => member.joining_year === 2021);
-  const k22Team = team.filter((member:TeamProps) => member.joining_year === 2022);
-  const k23Team = team.filter((member:TeamProps) => member.joining_year === 2023);
+  const k21Team = team.filter(
+    (member: TeamProps) => member.joining_year === 2021
+  );
+  const k22Team = team.filter(
+    (member: TeamProps) => member.joining_year === 2022
+  );
+  const k23Team = team.filter(
+    (member: TeamProps) => member.joining_year === 2023
+  );
   // console.log(k22Team)
 
   return (
@@ -49,7 +55,7 @@ export default async function Page() {
           <div key={member.name} className="flex flex-col items-center">
             <div
               className="relative rounded-md overflow-hidden"
-              style={{ width: '200px', height: '200px' }}
+              style={{ width: "200px", height: "200px" }}
             >
               <Image
                 src={member.image}

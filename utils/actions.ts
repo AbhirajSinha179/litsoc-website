@@ -34,36 +34,49 @@ export async function getTeam() {
 }
 
 export async function getGalleryImages() {
-  const  publicURL = supabase.storage.from('litsoc-images').getPublicUrl('Gallery')
- 
-  const { data, error } = await supabase.storage.from('litsoc-images').list('Gallery')
-  const { data: data2, error: error2 } = await supabase.storage.from('litsoc-images').list('Gallery/Litnight')
-  const { data: data3, error: error3 } = await supabase.storage.from('litsoc-images').list('Gallery/Rostra')
+  const publicURL = supabase.storage
+    .from("litsoc-images")
+    .getPublicUrl("Gallery");
 
-  if (error|| error2 || error3) {
-    console.error('Error fetching images:', error);
+  const { data, error } = await supabase.storage
+    .from("litsoc-images")
+    .list("Gallery");
+  const { data: data2, error: error2 } = await supabase.storage
+    .from("litsoc-images")
+    .list("Gallery/Litnight");
+  const { data: data3, error: error3 } = await supabase.storage
+    .from("litsoc-images")
+    .list("Gallery/Rostra");
+
+  if (error || error2 || error3) {
+    console.error("Error fetching images:", error);
     return [];
   }
-  if(!data || !data2 || !data3){
-    console.error('No images present in database');
+  if (!data || !data2 || !data3) {
+    console.error("No images present in database");
     return [];
   }
 
-  const images = await Promise.all(data.filter((val) => val.name != 'Litnight' && val.name != 'Rostra').map(async (file) => {
-    if(file.name=='Litnight'|| file.name=='Rostra') return file.name;
-    const  imageUrl  = publicURL.data.publicUrl+'/'+file.name
-    return imageUrl;
-  }));
-  
-  const litImages = await Promise.all(data2.map(async (file) => {
-    const  imageUrl  = publicURL.data.publicUrl+'/Litnight/'+file.name
-    return imageUrl;
-  }));
+  const images =
+    data
+      .filter((val) => val.name != "Litnight" && val.name != "Rostra")
+      .map((file) => {
+        if (file.name == "Litnight" || file.name == "Rostra") return file.name;
+        const imageUrl = publicURL.data.publicUrl + "/" + file.name;
+        return imageUrl;
+      })
 
-  const rostraImages = await Promise.all(data3.map(async (file) => {
-    const  imageUrl  = publicURL.data.publicUrl+'/Rostra/'+file.name
-    return imageUrl;
-  }));
+  const litImages =
+    data2.map((file) => {
+      const imageUrl = publicURL.data.publicUrl + "/Litnight/" + file.name;
+      return imageUrl;
+    })
 
-  return [images,litImages,rostraImages];
+  const rostraImages = 
+    data3.map((file) => {
+      const imageUrl = publicURL.data.publicUrl + "/Rostra/" + file.name;
+      return imageUrl;
+    })
+
+  return [images, litImages, rostraImages];
 }

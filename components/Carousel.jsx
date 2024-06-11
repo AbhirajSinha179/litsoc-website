@@ -17,7 +17,7 @@ export default function Carousel({images}){
     modifier: 1,
     slideShadows: true,
   };
-  const autoplay= {
+  const autoplay = {
     enabled: true,
     delay: 7000,
     waitForTransition: false,
@@ -25,34 +25,38 @@ export default function Carousel({images}){
     stopOnLastSlide: false,
     reverseDirection: false,
     pauseOnMouseEnter: true,
-    dataSwiperAutoplay: 2000
+    dataSwiperAutoplay: 2000,
   };
 
   return (
     <Swiper
-      effect={'coverflow'}
+      effect={"coverflow"}
       grabCursor={true}
       centeredSlides={true}
-      slidesPerView={'auto'}
-      coverflowEffect={coverflowEffectConfig} 
+      slidesPerView={"auto"}
+      coverflowEffect={coverflowEffectConfig}
       pagination={{ clickable: true }}
       initialSlide={3}
       loop={true}
       autoplay={autoplay}
       modules={[EffectCoverflow, Pagination, Autoplay]}
       className=" max-w-[100vw] h-[66vw] sm:h-[400px] sm:max-w-[600px] "
-      
     >
       {images.map((image, index) => (
         <SwiperSlide
           key={index}
-          className='bg-center bg-cover w-[300px] h-[500px] lg:w-[450px] lg:h-[500px] '
-          >
+          className="bg-center bg-cover w-[300px] h-[500px] lg:w-[450px] lg:h-[500px] "
+        >
+          <div className="flex justify-center p-36 text-7xl w-[300px] h-[500px] lg:w-[450px] lg:h-[500px]">
+            Loading <span className="animate-pulse ">...</span>
+          </div>
 
-            <div className='flex justify-center p-36 text-7xl w-[300px] h-[500px] lg:w-[450px] lg:h-[500px]'>Loading <span className='animate-pulse '>...</span></div>
-            
-            <Image src={image} alt={"Image Not Available"} className='block w-[300px] h-[500px] lg:w-[600px] lg:h-[400px] sm:rounded-md' layout='fill'/>
-        
+          <Image
+            src={image}
+            alt={"Image Not Available"}
+            className="block w-[300px] h-[500px] lg:w-[600px] lg:h-[400px] sm:rounded-md"
+            layout="fill"
+          />
         </SwiperSlide>
       ))}
     </Swiper>
