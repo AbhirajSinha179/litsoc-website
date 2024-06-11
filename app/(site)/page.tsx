@@ -50,11 +50,11 @@ export default async function Index() {
                 <Image
                   src={card.image}
                   alt={card.title}
-                  className="overflow-hidden rounded-lg p-4"
+                  className="overflow-hidden w-full rounded-t-lg"
                   width={400}
                   height={400}
                 />
-                <h1 className="text-xl my-4" style={gilda.style}>{card.title}</h1>
+                <h1 className="text-xl lg:text-2xl my-4" style={gilda.style}>{card.title}</h1>
               </Link>
             )) ?? null}
           </div>

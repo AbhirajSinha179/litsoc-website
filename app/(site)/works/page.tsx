@@ -10,7 +10,7 @@ export default async function Page() {
   const collections = works?.filter((item: WorkCardProps) => item.type == "Collections");
   const blogs = works?.filter((item: WorkCardProps) => item.type == "Blogs");
 
-  const WORKS_CONFIG: { [key: string]: { title: string; works: WorkCardProps[] } } = {
+  const worksConfig: { [key: string]: { title: string; works: WorkCardProps[] } } = {
     "reviews": {
       title: "Reviews",
       works: reviews,
@@ -29,16 +29,15 @@ export default async function Page() {
     <main className="flex flex-col items-center gap-12 px-4">
       <Header title="Works" />
 
-      {Object.keys(WORKS_CONFIG).map((key: string) => {
-        const { title, works } = WORKS_CONFIG[key];
+      {Object.keys(worksConfig).map((key: string) => {
+        const { title, works } = worksConfig[key];
         return (
           <section key={key} className="flex flex-col items-center gap-4">
-            <h2 className="text-xl sm:text-xl md:text-2xl lg:text-5xl my-4">
-              {" "}
-              {(works && works.length>0) ??title}{" "}
+            <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl my-12">
+              {works.length>0 && title}
             </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-7xl">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl">
               {works.map((item: WorkCardProps) => (
                 <Link href={`/works/${item.id}`} key={item.id} className="flex">
                   <div className="bg-[#74512D] text-[var(--custom-color-2)] overflow-hidden rounded-lg transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer flex flex-col">
