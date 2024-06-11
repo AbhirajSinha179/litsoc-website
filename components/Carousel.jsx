@@ -1,36 +1,16 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
-import { Autoplay, EffectCoverflow, Pagination } from "swiper/modules";
-import { getGalleryImages } from "@/utils/actions";
+"use client"
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css'; 
+import 'swiper/css/effect-coverflow'; 
+import 'swiper/css/pagination'; 
+import { Autoplay, EffectCoverflow, Pagination } from 'swiper/modules';
 import Image from "next/image";
 
-export default function Carousel() {
-  const [images, setImages] = useState([]);
+export default function Carousel({images}){
 
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    async function fetchImages() {
-      try {
-        const filteredImages = await getGalleryImages();
-        setImages(filteredImages[0]);
-      } catch (err) {
-        setError(err);
-      }
-    }
-
-    fetchImages();
-  }, []);
-
-  if (error) {
-    return <div>Error loading images: {error.message}</div>;
-  }
-
-  const coverflowEffectConfig = {
+ const coverflowEffectConfig = {
     rotate: 50,
     stretch: 0,
     depth: 100,
@@ -82,3 +62,7 @@ export default function Carousel() {
     </Swiper>
   );
 }
+
+Carousel.propTypes = {
+  images: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
