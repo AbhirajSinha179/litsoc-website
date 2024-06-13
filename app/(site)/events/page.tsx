@@ -23,7 +23,7 @@ const rostraEvents: EventProps[] = [
   {
     name: "SPEAKERS' DILEMMA",
     image: "/images/SPEAKER'S_DILEMMA.jpg",
-    description: "A test of detective skills and trivia knowledge of the participants, based on literary facts and fiction.",
+    description: "A trial like test of your oratory prowess, allowing the literati in you to sprinkle a dash of that burning passion as you declamate a moving speech for the jury and audience.",
   },
   {
     name: "NEHLE-PE-DEHLA",
