@@ -26,9 +26,8 @@ export default function Navbar() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
- 
   return (
-    <div className={isScroll ? `top-2 w-[95%] fixed border-2 px-2 rounded-3xl pb-1.5 z-50 bg-[var(--custom-color-2)] bg-opacity-75 opacity-80 hover:bg-opacity-95 hover:opacity-95`:`flex-grow w-full border-black  flex flex-col items-center  border-r-0`}>
+    <div className={isScroll ? `top-2 w-[95%] fixed border-2 px-2 rounded-3xl pb-1.5 z-50 bg-[var(--custom-color-2)] bg-opacity-75 opacity-80 hover:bg-opacity-95 hover:opacity-95`:`flex-grow w-[99%] border-black  flex flex-col items-center  border-r-0`}>
       <nav
         className="mx-2 mt-1 w-full flex items-center justify-between ease-in-out"
         style={gilda.style}

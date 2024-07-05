@@ -27,7 +27,7 @@ const landingCardsConfig = [
 export default async function Index() {
   return (
     <div className="relative flex-1 w-full flex flex-col gap-10 items-center">
-      <div className="absolute top-0 z-[-2] h-screen w-screen rotate-180 transform  bg-[radial-gradient(60%_120%_at_50%_50%,hsla(0,0%,100%,0)_0,rgba(252,205,238,.5)_100%)]"></div>
+      <div className="absolute top-0 z-[-2] h-full w-full rotate-180 transform  bg-[radial-gradient(60%_120%_at_50%_50%,hsla(0,0%,100%,0)_0,rgba(252,205,238,.5)_100%)]"></div>
       <div className="animate-in flex-1 flex flex-col gap-10 opacity-0 px-3 ">
         <div className="w-full flex flex-col gap-4 sm:gap-8 items-center">
           <h1
